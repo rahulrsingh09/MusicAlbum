@@ -9,8 +9,8 @@
           <div class="card" *ngFor = "let musicAlbum of musicAlbums">
             <img class="card-img-top" [src]="musicAlbum.image" alt="image">
             <div class="card-body">
-              <h5 class="card-title">{{musicAlbum.artist}}</h5>
-              <p class="card-text">{{musicAlbum.title}}</p>
+              <h5 class="card-title">{{musicAlbum.title}}</h5>
+              <p class="card-text">{{musicAlbum.artist}}</p>
             </div>
             <div class="card-footer">
               <a class = "album-buy-link" href="{{musicAlbum.url}}"><img [src] = "buyFrom" alt="Buy From"/></a>
