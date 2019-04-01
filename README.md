@@ -1,6 +1,6 @@
 # Display Music Albums 
 
-This Project can be previewed @ <https://angular-music-albums.stackblitz.io/>
+This Project can be previewed @ <https://angular-music-albums.stackblitz.io>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli)
 By Rahul Singh <rahulrsingh09@gmail.com>
