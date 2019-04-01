@@ -12,14 +12,15 @@ export class MusicAlbumComponent implements OnInit {
 
   musicAlbums: MusicAlbumModel[];
   buyFrom: string = MusicAlbumComponent.BUY_NOW_URL;
-
+  loading: boolean ;
   constructor(private musicAlbumRestService : MusicAlbumRestService){}
   
   ngOnInit(){
+    this.loading = true;
     this.musicAlbumRestService.getMusicAlbums().subscribe(data => {
       this.musicAlbums = data;
-      });
-    
+      this.loading = false;  
+    });   
   }
 
 

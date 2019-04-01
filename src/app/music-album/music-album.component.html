@@ -1,23 +1,29 @@
-<div class = "col-md-12" *ngIf = "musicAlbums">
-  <br>
-  <br>
-  <div class="row">
-    <div class="card-deck">
-        <div class="card" *ngFor = "let musicAlbum of musicAlbums">
-          <img class="card-img-top" [src]="musicAlbum.image" alt="image">
-          <div class="card-body">
-            <h5 class="card-title">{{musicAlbum.artist}}</h5>
-            <p class="card-text">{{musicAlbum.title}}</p>
-          </div>
-          <div class="card-footer">
-            <a class = "album-buy-link" href="{{musicAlbum.url}}"><img [src] = "buyFrom" alt="Buy From"/></a>
+<div class = "col-md-12" *ngIf="loading; else loaded" class="loading">
+  <h4>Loading .</h4>
+</div>
+
+<ng-template #loaded>
+  <div class = "col-md-12" *ngIf = "musicAlbums">
+    <div class="row musicAlbums">
+      <div class="card-deck">
+          <div class="card" *ngFor = "let musicAlbum of musicAlbums">
+            <img class="card-img-top" [src]="musicAlbum.image" alt="image">
+            <div class="card-body">
+              <h5 class="card-title">{{musicAlbum.artist}}</h5>
+              <p class="card-text">{{musicAlbum.title}}</p>
+            </div>
+            <div class="card-footer">
+              <a class = "album-buy-link" href="{{musicAlbum.url}}"><img [src] = "buyFrom" alt="Buy From"/></a>
+            </div>
           </div>
         </div>
-      </div>
+    </div>
   </div>
-</div>
-
-
-<div class = "error" *ngIf = "!musicAlbums">
-  <h3>No Music Album Data Available</h3>
-</div>
+  
+  
+  <div class = "col-md-12 error" *ngIf = "!musicAlbums">
+    <div class = "row">
+      <h4>No Music Album Data Available</h4>
+    </div>
+  </div>
+</ng-template>
